@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UGC NET All India Live Test</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Inter:wght@400;500;600&display=swap');
+  :root{--ink:#0e1a3d;--panel:#16255a;--line:#2a3c7a;--gold:#e2b23c;--paper:#f4f6ff;--mute:#9fb0e6;--ok:#2fbf82;--bad:#e5604a}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ink);color:var(--paper);font-family:Inter,system-ui,sans-serif;line-height:1.5;padding:24px 16px 56px}
+  .wrap{max-width:560px;margin:0 auto}
+  h1{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:2rem;line-height:1.15;margin:0 0 6px}
+  h2{font-family:Fraunces,Georgia,serif;font-size:1.1rem;margin:0 0 12px}
+  .sub{color:var(--mute);margin:0 0 20px}
+  .chip{display:inline-block;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:3px 12px;font-size:.8rem;color:var(--gold);margin-bottom:14px}
+  .hidden{display:none!important}
+
+  /* Feature icons */
+  .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 22px}
+  .feat{text-align:center;padding:12px 6px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  .feat svg{width:32px;height:32px;stroke:var(--gold);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-bottom:6px}
+  .feat span{display:block;font-size:.78rem;line-height:1.3;color:var(--paper)}
+
+  /* Steps */
+  .step{display:flex;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px}
+  .num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--gold);color:#1a1300;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .step h3{font-family:Fraunces,Georgia,serif;font-size:1.05rem;margin:2px 0 4px}
+  .step p{margin:0 0 12px;color:var(--mute);font-size:.9rem}
+  .step .body{flex:1;min-width:0}
+
+  /* Form */
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:16px}
+  label{display:block;font-size:.85rem;color:var(--mute);margin:10px 0 4px}
+  input{width:100%;padding:11px 12px;border-radius:8px;border:1px solid var(--line);background:var(--ink);color:var(--paper);font:inherit}
+  input:focus,button:focus-visible,a.btn:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+  input[readonly]{color:var(--gold);font-weight:600}
+  .row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .hint{font-size:.8rem;color:var(--mute);margin-top:6px}
+  .hint.err{color:var(--bad)}
+  button,a.btn{display:block;width:100%;padding:13px;border:0;border-radius:10px;background:var(--gold);color:#1a1300;font:600 1rem Inter,sans-serif;cursor:pointer;text-align:center;text-decoration:none}
+  button.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+  button:disabled{opacity:.6;cursor:wait}
+  .back{background:none;border:0;color:var(--gold);width:auto;padding:0;margin-bottom:14px;font-size:.9rem;font-weight:500;text-align:left}
+  #banner{display:none;border-radius:10px;padding:14px;margin-bottom:16px}
+  #banner.ok{display:block;background:rgba(47,191,130,.15);border:1px solid var(--ok)}
+  #banner.bad{display:block;background:rgba(229,96,74,.15);border:1px solid var(--bad)}
+
+  /* Popup */
+  dialog{border:1px solid var(--gold);border-radius:14px;background:var(--panel);color:var(--paper);padding:22px;max-width:360px;width:calc(100% - 32px);text-align:center}
+  dialog::backdrop{background:rgba(5,10,30,.75)}
+  dialog h3{font-family:Fraunces,Georgia,serif;margin:0 0 8px}
+  dialog p{margin:0 0 16px;color:var(--mute)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div id="refChip" class="chip" style="display:none"></div>
+
+  <!-- ========== VIEW 1: STEPS ========== -->
+  <section id="viewSteps">
+    <h1>UGC NET ALL INDIA LIVE TEST</h1>
+    <p class="sub">Paper 1 · Take the test, submit your result, see where you rank.</p>
+
+    <div class="feats">
+      <div class="feat">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="M7 9h6M7 12h4"/></svg>
+        <span>Real Exam CBT interface</span>
+      </div>
+      <div class="feat">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg>
+        <span>NTA level mocks</span>
+      </div>
+      <div class="feat">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg>
+        <span>Know where you stand at All India level</span>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">1</div>
+      <div class="body">
+        <h3>Take the All India Live Test</h3>
+        <p>UGC NET Paper 1. Attempt the live test on the Oliveboard platform.</p>
+        <a id="testBtn" class="btn" href="#" target="_blank" rel="noopener">Take the live test</a>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">2</div>
+      <div class="body">
+        <h3>Submit your test results</h3>
+        <p>Enter your marks and upload your result screenshot to get on the leaderboard.</p>
+        <button id="toForm" type="button">Submit your results</button>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">3</div>
+      <div class="body">
+        <h3>Check the leaderboard rankings</h3>
+        <p>See how you rank against everyone who took the test.</p>
+        <button id="lbBtn" type="button" class="ghost">Check leaderboard rankings</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VIEW 2: SUBMISSION FORM ========== -->
+  <section id="viewForm" class="hidden">
+    <button class="back" id="toSteps" type="button">← Back to steps</button>
+    <h1>Submit your test results</h1>
+    <p class="sub">UGC NET All India Live Test · Paper 1</p>
+
+    <div id="banner" role="status"></div>
+
+    <div class="card">
+      <h2>About you</h2>
+      <label for="name">Name (shown on the leaderboard)</label>
+      <input id="name" maxlength="40" autocomplete="name">
+    </div>
+
+    <div class="card">
+      <h2>Your result</h2>
+      <div class="row">
+        <div><label for="correct">Correct Attempts</label><input id="correct" type="number" inputmode="numeric" min="0" max="50"></div>
+        <div><label for="incorrect">Incorrect Attempts</label><input id="incorrect" type="number" inputmode="numeric" min="0" max="50"></div>
+        <div><label for="unatt">Unattempted</label><input id="unatt" type="number" inputmode="numeric" min="0" max="50"></div>
+      </div>
+      <div id="sumHint" class="hint">Correct + incorrect + unattempted must be 50.</div>
+      <label for="total">Total marks (2 per correct answer)</label>
+      <input id="total" readonly value="0 / 100">
+    </div>
+
+    <div class="card">
+      <h2>Result screenshot</h2>
+      <input id="file" type="file" accept="image/*">
+      <div class="hint">Upload a screenshot of your result page. It is checked before ranks are announced.</div>
+    </div>
+
+    <button id="submitBtn" type="button">Submit score</button>
+    <p class="hint">By submitting, you agree that your name and score can appear on the public leaderboard.</p>
+  </section>
+</div>
+
+<!-- Leaderboard popup -->
+<dialog id="lbDialog">
+  <h3>Leaderboard coming soon</h3>
+  <p>Results will be shared on the group/channel.</p>
+  <button id="lbClose" type="button">Got it</button>
+</dialog>
+
+<script>
+// ───────── EDIT THESE LINES ─────────
+const CONFIG = {
+  SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbwUk1LHMZdei8JCY8KJl8OnchH0UIppw2MGe30IdgF-dLsF3NjwXslN2LIAhwXjRLvEYA/exec',
+  TEST_LINK:  'https://www.oliveboard.in/ugc-net-live-test/?ref=LDRBDR&next=https://u1.oliveboard.in/exams/?c=ugc1&i=teaching'
+};
+// ────────────────────────────────────
+
+const $ = id => document.getElementById(id);
+$('testBtn').href = CONFIG.TEST_LINK;
+
+// Partner tag from the link: ...?ref=priyam
+const ref = (new URLSearchParams(location.search).get('ref') || 'direct').toLowerCase().replace(/[^a-z0-9_-]/g,'').slice(0,30) || 'direct';
+if (ref !== 'direct') { $('refChip').style.display='inline-block'; $('refChip').textContent = 'Group: ' + ref; }
+
+// ── Switching between the steps view and the form (keeps ?ref= intact) ──
+function show(view){
+  $('viewSteps').classList.toggle('hidden', view !== 'steps');
+  $('viewForm').classList.toggle('hidden', view !== 'form');
+  window.scrollTo(0,0);
+}
+$('toForm').addEventListener('click', () => { history.pushState({v:'form'}, '', '#submit'); show('form'); });
+$('toSteps').addEventListener('click', () => { history.pushState({v:'steps'}, '', location.pathname + location.search); show('steps'); });
+window.addEventListener('popstate', () => show(location.hash === '#submit' ? 'form' : 'steps'));
+if (location.hash === '#submit') show('form');
+
+// ── Leaderboard popup ──
+$('lbBtn').addEventListener('click', () => $('lbDialog').showModal());
+$('lbClose').addEventListener('click', () => $('lbDialog').close());
+
+// ── Form logic (unchanged) ──
+const num = id => { const v = $(id).value; return v === '' ? NaN : Number(v); };
+function update(){
+  const c=num('correct'), i=num('incorrect'), u=num('unatt');
+  $('total').value = (isNaN(c) ? 0 : c*2) + ' / 100';
+  const h=$('sumHint');
+  if ([c,i,u].some(isNaN)) { h.className='hint'; h.textContent='Correct + incorrect + unattempted must be 50.'; return; }
+  const s=c+i+u;
+  h.className = s===50 ? 'hint' : 'hint err';
+  h.textContent = s===50 ? 'Looks good.' : 'These add up to ' + s + '. They must add up to 50.';
+}
+['correct','incorrect','unatt'].forEach(id => $(id).addEventListener('input', update));
+
+function banner(kind, html){ const b=$('banner'); b.className=kind; b.innerHTML=html; b.scrollIntoView({behavior:'smooth'}); }
+const esc = s => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+
+async function compress(file){
+  try {
+    const bmp = await createImageBitmap(file);
+    const scale = Math.min(1, 1400 / bmp.width);
+    const cv = document.createElement('canvas');
+    cv.width = Math.round(bmp.width*scale); cv.height = Math.round(bmp.height*scale);
+    cv.getContext('2d').drawImage(bmp,0,0,cv.width,cv.height);
+    return cv.toDataURL('image/jpeg',0.8).split(',')[1];
+  } catch(e) {
+    return await new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(r.result.split(',')[1]); r.onerror=rej; r.readAsDataURL(file); });
+  }
+}
+
+$('submitBtn').addEventListener('click', async () => {
+  const name = $('name').value.trim();
+  const c=num('correct'), i=num('incorrect'), u=num('unatt');
+  const file = $('file').files[0];
+  if (!name) return banner('bad','Enter your name.');
+  if ([c,i,u].some(isNaN) || c+i+u !== 50) return banner('bad','Correct + incorrect + unattempted must add up to 50.');
+  if (!file) return banner('bad','Attach your result screenshot.');
+  if (!file.type.startsWith('image/')) return banner('bad','The screenshot must be an image (JPG or PNG).');
+
+  const btn=$('submitBtn'); btn.disabled=true; btn.textContent='Submitting…';
+  try {
+    const payload = { name, ref, correct:c, incorrect:i, unattempted:u, fileData: await compress(file) };
+    const res = await fetch(CONFIG.SCRIPT_URL, { method:'POST', body: JSON.stringify(payload) });
+    const data = await res.json();
+    if (data.status !== 'success') throw new Error(data.message || 'Something went wrong.');
+    banner('ok','Score submitted, ' + esc(name) + '. The leaderboard will be shared after screenshots are checked.');
+    ['name','correct','incorrect','unatt','file'].forEach(id => $(id).value='');
+    update();
+  } catch (err) {
+    banner('bad','Submission failed: ' + esc(err.message) + ' Try again.');
+  } finally { btn.disabled=false; btn.textContent='Submit score'; }
+});
+</script>
+</body>
+</html>
